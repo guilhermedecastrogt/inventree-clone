@@ -45,7 +45,7 @@ services:
         image: inventree-dev-image
         ports:
             # Expose web server on port 8000
-            - 8000:8000
+            - 8002:8002
         volumes:
             # Mount local source directory to /home/inventree
             - ./:/home/inventree:z
