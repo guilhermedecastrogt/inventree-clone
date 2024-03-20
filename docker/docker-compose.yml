@@ -41,7 +41,7 @@ services:
         image: postgres:13
         container_name: inventree-db
         expose:
-            - ${INVENTREE_DB_PORT:-5432}/tcp
+            - ${INVENTREE_DB_PORT:-5212}/tcp
         environment:
             - PGDATA=/var/lib/postgresql/data/pgdb
             - POSTGRES_USER=${INVENTREE_DB_USER:?You must provide the 'INVENTREE_DB_USER' variable in the .env file}
@@ -75,7 +75,7 @@ services:
         container_name: inventree-server
         # Only change this port if you understand the stack.
         expose:
-            - 8000
+            - 8002
         depends_on:
             - inventree-db
         env_file:
