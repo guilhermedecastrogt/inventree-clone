@@ -51,6 +51,8 @@ services:
             # Map 'data' volume such that postgres database is stored externally
             - ${INVENTREE_EXT_VOLUME:?You must specify the 'INVENTREE_EXT_VOLUME' variable in the .env file!}:/var/lib/postgresql/data/:z
         restart: unless-stopped
+        ports:
+            - "${INVENTREE_DB_PORT}:5432"
 
     # redis acts as database cache manager
     # only runs under the "redis" profile : https://docs.docker.com/compose/profiles/
@@ -76,6 +78,8 @@ services:
         # Only change this port if you understand the stack.
         expose:
             - 8002
+        ports:
+            - "${INVENTREE_WEB_PORT}:8002"
         depends_on:
             - inventree-db
         env_file:
@@ -84,6 +88,7 @@ services:
             # Data volume must map to /home/inventree/data
             - ${INVENTREE_EXT_VOLUME}:/home/inventree/data:z
         restart: unless-stopped
+
 
     # Background worker process handles long-running or periodic tasks
     inventree-worker:
@@ -110,7 +115,7 @@ services:
             - inventree-server
         ports:
             - ${INVENTREE_WEB_PORT:-80}:80
-            - 443:443
+            - 442:442
         env_file:
             - .env
         volumes:
