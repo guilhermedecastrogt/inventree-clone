@@ -41,7 +41,7 @@ services:
         image: postgres:13
         container_name: inventree-db
         expose:
-            - ${INVENTREE_DB_PORT:-5212}/tcp
+            - ${INVENTREE_DB_PORT:-5432}/tcp
         environment:
             - PGDATA=/var/lib/postgresql/data/pgdb
             - POSTGRES_USER=${INVENTREE_DB_USER:?You must provide the 'INVENTREE_DB_USER' variable in the .env file}
@@ -110,7 +110,7 @@ services:
             - inventree-server
         ports:
             - ${INVENTREE_WEB_PORT:-80}:80
-            - 443:443
+            - 442:442
         env_file:
             - .env
         volumes:
