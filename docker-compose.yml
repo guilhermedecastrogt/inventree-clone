@@ -44,8 +44,8 @@ services:
         # Cache the built image to be used by the inventree-dev-worker process
         image: inventree-dev-image
         ports:
-            # Expose web server on port 8002
-            - 8002:8002
+            # Expose web server on port 8000
+            - 8000:8000
         volumes:
             # Mount local source directory to /home/inventree
             - ./:/home/inventree:z
