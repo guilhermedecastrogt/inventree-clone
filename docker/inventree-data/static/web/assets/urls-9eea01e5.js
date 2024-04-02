@@ -1,1 +1,0 @@
-import{M as e}from"./ModelType-07300e1e.js";function n(t,r){const o=e[t];return r==null?"":r&&o&&o.url_detail?o.url_detail.replace(":pk",r.toString()):(console.error(`No detail URL found for model ${t} <${r}>`),"")}export{n as g};
