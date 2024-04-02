@@ -1,0 +1,1 @@
+import{n as e,i}from"./vendor-580d7f6a.js";function n(){e.show({title:i._({id:"ipE2p4"}),message:i._({id:"WvSApV"}),color:"red"})}function t(){e.show({title:i._({id:"sJK6pq"}),message:i._({id:"3WjGlZ"}),color:"red"})}function d(s){e.show({title:i._({id:"J7PX+R"}),message:i._({id:"78bD8l",values:{returnCode:s}}),color:"red"})}export{d as i,n,t as p};

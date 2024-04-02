@@ -1,0 +1,1 @@
+import{j as o,$ as c,c6 as r,dz as x}from"./vendor-580d7f6a.js";function p({setEditing:i,editing:n,disabled:s,saveIcon:t}){return t=t||o.jsx(x,{}),o.jsx(c,{onClick:()=>i(),disabled:s,children:n?t:o.jsx(r,{})})}export{p as E};
